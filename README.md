@@ -1,14 +1,11 @@
 # git-workflow-practice
 
-Practice repo for core Git workflow: branch, PR, merge.
+Scratch repo where I practice the day-to-day Git flow: branch, PR, merge, pull.
 
-## Workflow
-- `main` only changes through pull requests
-- Branch off `main` using `<type>/<short-description>`, e.g. `docs/branch-pr-workflow`
-- Open a PR into `main`, review the diff, merge, then delete the branch
-- Pull `main` locally after every merge
+## How I work in this repo
 
-## Commands
+`main` only changes through a pull request. Branches are named `<type>/<short-description>`, for example `docs/branch-pr-workflow`. After a merge I delete the branch and pull `main`.
+
 ```
 git switch -c docs/branch-pr-workflow
 git add README.md
@@ -19,4 +16,11 @@ git switch main
 git pull
 git branch -d docs/branch-pr-workflow
 git fetch --prune
+```
+
+## Windows note
+
+Point Git at the built-in OpenSSH so it uses the Windows ssh-agent:
+```
+git config --global core.sshCommand "C:/Windows/System32/OpenSSH/ssh.exe"
 ```
